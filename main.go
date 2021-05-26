@@ -5,6 +5,7 @@ import (
 	exp03 "go-basic/exp_json"
 	exp02 "go-basic/exp_point"
 	exp01 "go-basic/exp_routine"
+	exp04 "go-basic/exp_sugar"
 )
 
 func main() {
@@ -20,5 +21,5 @@ func main() {
 	exp01.Goroutine_main()
 	exp02.Point_main()
 	exp03.Json_main()
-
+	exp04.Sugar_main()
 }

@@ -14,8 +14,8 @@ const (
 func Json_main() {
 	//struct_serialize()
 	//map_serialize()
-	struct_unserialize()
-	map_unserialize()
+	//struct_unserialize()
+	//map_unserialize()
 }
 
 type Demo_Person struct {
