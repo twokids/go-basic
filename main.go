@@ -2,6 +2,9 @@ package main
 
 import (
 	"fmt"
+	exp03 "go-basic/exp_json"
+	exp02 "go-basic/exp_point"
+	exp01 "go-basic/exp_routine"
 )
 
 func main() {
@@ -13,4 +16,9 @@ func main() {
 	appendcopydelete_main()
 	panic_recover_main()
 	lencapclose_main()
+	//struct_main()
+	exp01.Goroutine_main()
+	exp02.Point_main()
+	exp03.Json_main()
+
 }
