@@ -17,11 +17,16 @@ func Test_Anmial_01(t *testing.T) {
 
 func Test_Anmial_02(t *testing.T) {
 	var af = new(AnimalAgeFactory)
-	xiaohei := af.Create(dogType)
-	xiaohei.SetAge(200)
-	fmt.Println("xiaohei age", xiaohei.GetAge())
 
-	dali := af.Create(catType)
-	dali.SetAge(5)
-	fmt.Println("dali age", dali.GetAge())
+	cur_type := AnimalType(dogType)
+	switch cur_type {
+	case dogType:
+		xiaohei := af.Create(dogType)
+		xiaohei.SetAge(200)
+		fmt.Println("xiaohei age", xiaohei.GetAge())
+	case catType:
+		dali := af.Create(catType)
+		dali.SetAge(5)
+		fmt.Println("dali age", dali.GetAge())
+	}
 }

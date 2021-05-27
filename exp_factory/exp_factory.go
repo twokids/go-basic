@@ -13,12 +13,12 @@ type Cat struct {
 
 func (c *Cat) SetAge(age int32) int32 {
 	c.Age = age
-	fmt.Printf("cat age", c.Age)
+	fmt.Printf("set cat age %d \n", c.Age)
 	return c.Age
 }
 func (c *Cat) GetAge() int32 {
 
-	fmt.Printf("cat age", c.Age)
+	fmt.Printf("get cat age %d \n", c.Age)
 	return c.Age
 }
 
@@ -28,11 +28,11 @@ type Dog struct {
 
 func (d *Dog) SetAge(age int32) int32 {
 	d.Age = age
-	fmt.Printf("dog age", d.Age)
+	fmt.Printf("set dog age %d \n", d.Age)
 	return d.Age
 }
 func (d *Dog) GetAge() int32 {
-	fmt.Printf("dog age", d.Age)
+	fmt.Printf("get dog age %d \n", d.Age)
 	return d.Age
 }
 
