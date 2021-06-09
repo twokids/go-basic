@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	exp05 "go-basic/exp_dcmiddle"
 	exp03 "go-basic/exp_json"
 	exp02 "go-basic/exp_point"
 	exp01 "go-basic/exp_routine"
@@ -22,4 +23,5 @@ func main() {
 	exp02.Point_main()
 	exp03.Json_main()
 	exp04.Sugar_main()
+	exp05.DcmiddleMain()
 }

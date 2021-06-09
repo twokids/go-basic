@@ -30,3 +30,4 @@ func Test_Anmial_02(t *testing.T) {
 		fmt.Println("dali age", dali.GetAge())
 	}
 }
+
