@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 //数组
 func initArray() {
@@ -42,7 +45,65 @@ func initSlice()  {
 
 }
 
+
+//求交集
+func intersect(slice1, slice2 []string) []string {
+	m := make(map[string]int)
+	nn := make([]string, 0)
+	for _, v := range slice1 {
+		m[v]++
+	}
+
+	for _, v := range slice2 {
+		times, _ := m[v]
+		if times == 1 {
+			nn = append(nn, v)
+		}
+	}
+	return nn
+}
+
+//求差集 slice1-并集
+func difference(slice1, slice2 []string) []string {
+	m := make(map[string]int)
+	nn := make([]string, 0)
+	inter := intersect(slice1, slice2)
+	for _, v := range inter {
+		m[v]++
+	}
+
+	for _, value := range slice1 {
+		times, _ := m[value]
+		if times == 0 {
+			nn = append(nn, value)
+		}
+	}
+	return nn
+}
+
 func arrayslice_main() {
 	//fmt.Println(1)
 	//initArray()
+	slice1 := make([]string, 200000)
+	for i:=0;i<200000;i++{
+		slice1[i]=fmt.Sprintf("%s,%s", "nanshannanshanbeishanbei", i)
+	}
+
+	slice2 := make([]string, 200000)
+	for j:=0;j<200000;j++{
+		slice2[j]=fmt.Sprintf("%s,%s", "nanshannanshanbeishanbei", j+150000)
+	}
+	di_start:=time.Now()
+	di := difference(slice1, slice2)
+	di_dur:=time.Since(di_start)
+	fmt.Println("------di_dur-----",di_dur)
+
+
+	di2_start:=time.Now()
+	di2 := difference(slice2, slice1)
+	di2_dur:=time.Since(di2_start)
+	fmt.Println("------di2_dur-----",di2_dur)
+
+	fmt.Println("slice2与slice1的差集为：", di)
+	fmt.Println("slice2与slice1的差集为：", di2)
 }
